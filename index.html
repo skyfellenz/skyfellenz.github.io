@@ -5,28 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Skyler Fellenz | Design Hub</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <div class="brand-name"><a href="index.html">SKYLER FELLENZ</a></div>
+        <div class="brand-name"><a href="#">SKYLER FELLENZ</a></div>
         <nav>
-            <ul>
-                <li><a href="coding.html">Coding</a></li>
-                <li><a href="eml2023.html">EML2023</a></li>
-                <li><a href="grip.html">GRiP</a></li>
-                <li><a href="iam3d.html">IAM3D</a></li>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Projects ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="coding.html">Coding</a></li>
+                        <li><a href="eml2023.html">EML2023</a></li>
+                        <li><a href="grip.html">GRiP</a></li>
+                        <li><a href="iam3d.html">IAM3D</a></li>
+                    </ul>
+                </li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="hero">
         <div class="hero-content">
-            <h1>SKYLER<br>FELLENZ</h1>
+            <h1>SKYLER FELLENZ</h1>
             <h2>DESIGN HUB</h2>
-            <p>Specializing in CAD design, software development, and engineering innovation.</p>
+            <p>Engineering • CAD • Software Development</p>
         </div>
     </section>
+
+    <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p>I am a detail-oriented designer and engineer focused on the intersection of CAD and functional code.</p>
+    </section>
+
+    <section id="resume" class="content-section">
+        <h2>Resume</h2>
+        <p>Experience in SolidWorks, Python, and Mechanical Design. <br> <a href="resume.pdf" class="btn">Download Full CV</a></p>
+    </section>
+
+    <section id="contact" class="content-section">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:yourname@email.com">yourname@email.com</a></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Skyler Fellenz</p>
+    </footer>
 
 </body>
 </html>
