@@ -3,7 +3,8 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #0b0f1a; /* Dark background to match image */
+    /* CHANGED TO PURE BLACK */
+    background-color: #000000; 
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     overflow-x: hidden;
@@ -19,10 +20,13 @@ header {
     width: 100%;
     z-index: 1000;
     box-sizing: border-box;
+    /* Darker header to blend with black */
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
 }
 
 .brand-name a {
-    color: #38bdf8;
+    color: #38bdf8; /* Sky Blue */
     text-decoration: none;
     font-weight: 800;
     letter-spacing: 2px;
@@ -52,10 +56,10 @@ nav a:hover {
     align-items: center;
     padding: 0 10%;
     
-    /* Background Image Settings */
+    /* BACKGROUND IMAGE ALIGNED RIGHT */
     background-image: url('hero-bg.png'); 
-    background-size: contain; /* Keeps the whole cube visible */
-    background-position: right center; /* PINNED TO THE RIGHT */
+    background-size: contain; 
+    background-position: right center; 
     background-repeat: no-repeat;
 }
 
@@ -69,13 +73,18 @@ nav a:hover {
     margin: 0;
     line-height: 0.9;
     text-transform: uppercase;
+    /* Subtle gradient for depth */
+    background: linear-gradient(to bottom, #ffffff, #64748b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero-content h2 {
     font-size: 2.2rem;
-    color: #38bdf8;
+    color: #38bdf8; /* Sky Blue to match cube */
     margin: 10px 0;
     font-weight: 300;
+    letter-spacing: 4px;
 }
 
 .hero-content p {
@@ -83,4 +92,6 @@ nav a:hover {
     color: #94a3b8;
     max-width: 400px;
     line-height: 1.6;
+    border-left: 2px solid #38bdf8;
+    padding-left: 20px;
 }
