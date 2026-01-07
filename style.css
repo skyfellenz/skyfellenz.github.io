@@ -1,15 +1,24 @@
 /* style.css */
+:root {
+    --bg-dark: #0f172a; /* Deep Blue/Grey */
+    --bg-accent: #1e293b;
+    --sky-blue: #38bdf8;
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+}
+
+* { box-sizing: border-box; }
+
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
-    /* CHANGED TO PURE BLACK */
-    background-color: #000000; 
-    color: #ffffff;
+    background: radial-gradient(circle at top right, #1e293b, #0f172a);
+    color: var(--text-main);
     font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
+/* --- NAVIGATION --- */
 header {
     height: 80px;
     display: flex;
@@ -19,79 +28,101 @@ header {
     position: fixed;
     width: 100%;
     z-index: 1000;
-    box-sizing: border-box;
-    /* Darker header to blend with black */
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(15, 23, 42, 0.9);
     backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
 }
 
 .brand-name a {
-    color: #38bdf8; /* Sky Blue */
+    color: var(--sky-blue);
     text-decoration: none;
     font-weight: 800;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
-nav ul { 
-    display: flex; 
-    gap: 30px; 
-    list-style: none; 
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
 }
 
-nav a { 
-    text-decoration: none; 
-    color: #cbd5e1; 
-    font-size: 0.9rem; 
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    font-weight: 500;
     transition: 0.3s;
 }
 
-nav a:hover {
-    color: #38bdf8;
+.nav-links a:hover { color: var(--sky-blue); }
+
+/* --- DROPDOWNS --- */
+.dropdown { position: relative; }
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%; /* Directly below */
+    left: 0;
+    background: var(--bg-accent);
+    list-style: none;
+    padding: 10px 0;
+    min-width: 150px;
+    display: none;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
 }
 
-/* --- HERO SECTION --- */
+.dropdown:hover .dropdown-menu { display: block; }
+
+.dropdown-menu li a {
+    padding: 10px 20px;
+    display: block;
+    color: var(--text-main);
+}
+
+.dropdown-menu li a:hover { background: rgba(56, 189, 248, 0.1); }
+
+/* --- SECTIONS --- */
 .hero {
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 0 10%;
-    
-    /* BACKGROUND IMAGE ALIGNED RIGHT */
-    background-image: url('hero-bg.png'); 
-    background-size: contain; 
-    background-position: right center; 
-    background-repeat: no-repeat;
+    text-align: center;
+    padding: 0 20px;
 }
 
-.hero-content {
-    max-width: 600px;
-    z-index: 2;
+.hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; }
+.hero h2 { color: var(--sky-blue); letter-spacing: 5px; font-weight: 300; }
+
+.content-section {
+    padding: 100px 10%;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.hero-content h1 {
-    font-size: 5rem;
-    margin: 0;
-    line-height: 0.9;
-    text-transform: uppercase;
-    /* Subtle gradient for depth */
-    background: linear-gradient(to bottom, #ffffff, #64748b);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.content-section h2 {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--sky-blue);
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
-.hero-content h2 {
-    font-size: 2.2rem;
-    color: #38bdf8; /* Sky Blue to match cube */
-    margin: 10px 0;
-    font-weight: 300;
-    letter-spacing: 4px;
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: var(--sky-blue);
+    color: #000;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-.hero-content p {
-    font-size: 1.1rem;
-    color: #94a3b8;
-    max-width: 400px;
-    line-height: 1.6;
-    border-left: 2px solid #38bdf8;
-    padding-left: 20px;
+/* --- MOBILE RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .nav-links { display: none; } /* Consider adding a mobile toggle button later */
+    .hero h1 { font-size: 3rem; }
+    .content-section { padding: 60px 5%; }
 }
