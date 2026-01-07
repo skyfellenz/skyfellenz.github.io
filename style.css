@@ -8,7 +8,7 @@ body, html {
     font-family: 'Segoe UI', Tahoma, sans-serif;
 }
 
-/* --- NAVIGATION BAR --- */
+/* --- NAVIGATION --- */
 header {
     background-color: #1e293b;
     padding: 0 2rem;
@@ -22,7 +22,7 @@ header {
 }
 
 .brand-name a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: bold;
     color: #38bdf8;
     text-decoration: none;
@@ -41,45 +41,53 @@ nav ul {
 nav a {
     text-decoration: none;
     color: #ffffff;
-    font-weight: 500;
     font-size: 0.9rem;
 }
 
-/* --- FULL PAGE BACKGROUND HERO --- */
+/* --- SPLIT HERO SECTION --- */
 .hero {
-    height: calc(100vh - 70px); 
-    width: 100%;
-    position: relative;
+    height: calc(100vh - 70px);
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Pushes content to the bottom */
     align-items: center;
+    justify-content: space-between; /* Pushes text left, image right */
+    padding: 0 10%;
     
-    /* BACKGROUND IMAGE */
-    /* Ensure your file is named EXACTLY: hero-bg.png */
-    background: url('hero-bg.png'); 
-    background-size: cover; 
+    /* BACKGROUND SETTINGS */
+    background: radial-gradient(circle at 70% 50%, rgba(56, 189, 248, 0.1), transparent), 
+                url('hero-bg.png'); 
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 }
 
-/* --- CLEAN BOTTOM OVERLAY --- */
-.overlay-bar {
-    background: rgba(15, 23, 42, 0.8); /* Semi-transparent dark bar */
-    backdrop-filter: blur(10px); /* Blur effect for modern look */
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-    border-top: 1px solid rgba(56, 189, 248, 0.3);
+.hero-text {
+    max-width: 500px;
+    z-index: 2;
 }
 
-.overlay-bar p {
+.hero-text h1 {
+    font-size: 4.5rem;
+    line-height: 0.9;
     margin: 0;
-    font-size: 1.1rem;
-    color: #38bdf8;
-    letter-spacing: 3px;
-    font-weight: 600;
     text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
+.hero-text .design-hub {
+    display: block;
+    font-size: 2rem;
+    color: #38bdf8;
+    letter-spacing: 8px;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+.hero-text .sub-nav {
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #94a3b8;
+    letter-spacing: 2px;
+    border-left: 3px solid #38bdf8;
+    padding-left: 20px;
 }
 
 /* Dropdown styling */
@@ -90,7 +98,6 @@ nav a {
     min-width: 140px;
     top: 100%;
     right: 0;
-    border-radius: 0 0 4px 4px;
 }
 nav ul li:hover .dropdown-content { display: block; }
-.dropdown-content a { padding: 10px 15px; display: block; color: white; }
+.dropdown-content a { padding: 10px; display: block; color: white; text-decoration: none; }
