@@ -6,29 +6,28 @@ body, html {
     background-color: #0f172a; 
     color: #e2e8f0; 
     font-family: 'Segoe UI', Tahoma, sans-serif;
-    overflow-x: hidden; /* Prevents awkward side-scrolling */
 }
 
 /* --- NAVIGATION BAR --- */
 header {
     background-color: #1e293b;
     padding: 0 2rem;
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #38bdf8;
+    border-bottom: 1px solid #38bdf8;
     position: relative;
-    z-index: 10;
+    z-index: 100;
 }
 
 .brand-name a {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #38bdf8;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 }
 
 nav ul {
@@ -43,60 +42,55 @@ nav a {
     text-decoration: none;
     color: #ffffff;
     font-weight: 500;
-    transition: 0.3s;
+    font-size: 0.9rem;
 }
 
-nav a:hover { color: #38bdf8; }
-
-/* --- FULL SCREEN HERO SECTION --- */
+/* --- FULL PAGE BACKGROUND HERO --- */
 .hero {
-    /* Calculates height to fill exactly what's left under the header */
-    height: calc(100vh - 80px); 
-    width: 100vw;
+    height: calc(100vh - 70px); 
+    width: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center;     
-    text-align: center;
-
-    /* Background Image - Set to fill the screen */
-    /* Ensure your file on GitHub is named EXACTLY: hero-bg.png */
-    background: linear-gradient(rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.4)), 
-                url('hero-bg.png'); 
+    justify-content: flex-end; /* Pushes content to the bottom */
+    align-items: center;
+    
+    /* BACKGROUND IMAGE */
+    /* Ensure your file is named EXACTLY: hero-bg.png */
+    background: url('hero-bg.png'); 
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.hero h1 {
-    font-size: 5rem;
+/* --- CLEAN BOTTOM OVERLAY --- */
+.overlay-bar {
+    background: rgba(15, 23, 42, 0.8); /* Semi-transparent dark bar */
+    backdrop-filter: blur(10px); /* Blur effect for modern look */
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.overlay-bar p {
     margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    color: #ffffff;
-    text-shadow: 0px 4px 20px rgba(0,0,0,0.9);
-}
-
-.hero p {
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     color: #38bdf8;
-    margin-top: 15px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-shadow: 0px 2px 10px rgba(0,0,0,0.9);
+    letter-spacing: 3px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
-/* --- DROPDOWN LOGIC --- */
+/* Dropdown styling */
 .dropdown-content {
     display: none;
     position: absolute;
     background-color: #334155;
-    min-width: 160px;
+    min-width: 140px;
     top: 100%;
     right: 0;
-    z-index: 1000;
     border-radius: 0 0 4px 4px;
 }
-
 nav ul li:hover .dropdown-content { display: block; }
-.dropdown-content a { padding: 12px 16px; display: block; font-size: 0.9rem; }
+.dropdown-content a { padding: 10px 15px; display: block; color: white; }
