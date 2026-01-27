@@ -1,27 +1,42 @@
-/* style.css */
+/* style.css - High Contrast Version */
+
 :root {
-    --bg-dark: #0f172a; 
-    --bg-accent: #1e293b;
-    --sky-blue: #38bdf8;
-    --text-main: #f8fafc;
-    --text-dim: #94a3b8;
+    --bg-navy: #0f172a;       /* Dark Navy */
+    --bg-accent: #1e293b;     /* Lighter Navy */
+    --sky-blue: #38bdf8;      /* Bright Sky Blue (Link Color) */
+    --text-main: #f8fafc;     /* Near White */
+    --text-dim: #94a3b8;      /* Slate Grey */
 }
 
-* { box-sizing: border-box; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
 
 html {
     scroll-behavior: smooth;
-    /* THIS FIXES THE OVERLAP FOR ALL LINKS */
     scroll-padding-top: 100px; 
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background: radial-gradient(circle at top right, #1e293b, #0f172a);
-    background-attachment: fixed; /* Keeps the gradient still while scrolling */
+    background: radial-gradient(circle at top right, var(--bg-accent), var(--bg-navy));
+    background-attachment: fixed;
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+/* --- UNIVERSAL LINK OVERRIDE --- */
+/* This stops the browser from using that hard-to-read dark blue */
+a {
+    color: var(--sky-blue);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #ffffff;
 }
 
 /* --- NAVIGATION --- */
@@ -35,16 +50,16 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    background: rgba(15, 23, 42, 0.9);
+    background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+    border-bottom: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 .brand-name a {
-    color: var(--sky-blue);
-    text-decoration: none;
+    color: var(--sky-blue) !important;
     font-weight: 800;
     letter-spacing: 1px;
+    font-size: 1.3rem;
 }
 
 .nav-links {
@@ -54,18 +69,17 @@ header {
 }
 
 .nav-links a {
-    text-decoration: none;
     color: var(--text-dim);
     font-size: 0.9rem;
-    font-weight: 500;
-    transition: 0.3s;
+    font-weight: 600;
 }
 
-.nav-links a:hover { color: var(--sky-blue); }
+.nav-links a:hover {
+    color: var(--sky-blue);
+}
 
-/* --- DROPDOWNS --- */
+/* --- DROPDOWN --- */
 .dropdown { position: relative; }
-
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -73,21 +87,21 @@ header {
     background: var(--bg-accent);
     list-style: none;
     padding: 10px 0;
-    min-width: 150px;
+    min-width: 160px;
     display: none;
     border-radius: 8px;
-    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    border: 1px solid var(--sky-blue);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
-
 .dropdown:hover .dropdown-menu { display: block; }
-
 .dropdown-menu li a {
     padding: 10px 20px;
     display: block;
     color: var(--text-main);
 }
+.dropdown-menu li a:hover { background: rgba(56, 189, 248, 0.1); }
 
-/* --- HERO SECTION --- */
+/* --- HERO --- */
 .hero {
     height: 100vh;
     display: flex;
@@ -95,13 +109,11 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
 }
+.hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; }
+.hero h2 { color: var(--sky-blue); letter-spacing: 4px; font-weight: 300; }
 
-.hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; font-weight: 800; }
-.hero h2 { color: var(--sky-blue); letter-spacing: 5px; font-weight: 300; }
-
-/* --- CONTENT SECTIONS --- */
+/* --- CONTENT --- */
 .content-section {
     padding: 80px 10%;
     max-width: 900px;
@@ -110,86 +122,33 @@ header {
 
 .content-section h2 {
     font-size: 2rem;
-    border-bottom: 2px solid var(--sky-blue);
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 12px 24px;
-    background: var(--sky-blue);
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-/* --- FILE GRID FOR SUBPAGES --- */
-.container { padding-top: 120px; padding-inline: 10%; }
-.file-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-.file-card {
-    background: var(--bg-accent);
-    padding: 25px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-footer { text-align: center; padding: 50px; color: var(--text-dim); }
-
-/* --- CONTACT CARD STYLES --- */
-.contact-card {
-    background: var(--bg-accent);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid rgba(56, 189, 248, 0.3); /* Subtle blue border */
-    margin-top: 20px;
-    text-align: center;
-}
-
-.contact-card p {
-    margin-bottom: 15px;
-    color: var(--text-dim);
-}
-
-.email-link {
-    font-size: 1.5rem; /* Larger font size */
-    font-weight: 700;
-    color: var(--sky-blue) !important; /* Forces the bright blue */
-    text-decoration: none;
-    transition: 0.3s;
-    display: inline-block;
-    word-break: break-all; /* Prevents overflow on small screens */
-    text-shadow: 0 0 15px rgba(56, 189, 248, 0.4); /* Glow effect */
-}
-
-.email-link:hover {
-    color: #fff !important;
-    text-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
-    transform: scale(1.02);
-}
-/* This targets the email specifically */
-.highlight-link {
-    color: var(--sky-blue) !important; /* Overrides default browser blue */
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1.2rem;
-    transition: 0.3s ease;
-    border-bottom: 2px solid transparent;
-}
-
-.highlight-link:hover {
-    color: #ffffff !important; /* Turns white on hover for max visibility */
-    border-bottom: 2px solid var(--sky-blue);
-    text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
-}
-
-/* General fix for any other links you might add */
-a {
     color: var(--sky-blue);
+    border-bottom: 2px solid var(--sky-blue);
+    display: inline-block;
+    margin-bottom: 25px;
 }
+
+/* --- THE EMAIL FIX --- */
+#contact a {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--sky-blue) !important; /* Force visibility */
+    display: inline-block;
+    margin-top: 10px;
+    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+#contact a:hover {
+    color: #ffffff !important;
+    text-shadow: 0 0 15px var(--sky-blue);
+}
+
+/* --- BUTTONS --- */
+.btn, .btn-download {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: var(--sky-blue);
+    color: #0f172a !important; /* Black text on bright button */
+    border-radius: 6px;
+    font-weight
