@@ -79,11 +79,18 @@ header {
 .hero h2 { color: var(--sky-blue); letter-spacing: 6px; font-size: 1.4rem; margin-bottom: 20px; font-weight: 400; }
 
 /* --- PROJECT PAGE CONTAINER FIX --- */
-/* This pushes the content down so it doesn't hide under the 80px header */
+/* Pushes project content down 140px (80px for taskbar + 60px gap) */
 .container { 
-    padding: 140px 10% 50px; 
+    padding: 140px 10% 80px; 
     max-width: 1000px; 
-    margin: 0 auto; 
+    margin: 0 auto;
+    min-height: 85vh; 
+}
+
+.container h1 {
+    color: var(--sky-blue);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
 /* --- CONTENT SPACING (HOMEPAGE) --- */
