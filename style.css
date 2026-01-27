@@ -1,18 +1,13 @@
-/* style.css - High Contrast Version */
-
 :root {
-    --bg-navy: #0f172a;       /* Dark Navy */
-    --bg-accent: #1e293b;     /* Lighter Navy */
-    --sky-blue: #38bdf8;      /* Bright Sky Blue (Link Color) */
-    --text-main: #f8fafc;     /* Near White */
-    --text-dim: #94a3b8;      /* Slate Grey */
+    --bg-navy: #0f172a;
+    --bg-accent: #1e293b;
+    --sky-blue: #38bdf8;
+    --text-main: #f8fafc;
+    --text-dim: #94a3b8;
+    --header-height: 80px;
 }
 
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
     scroll-behavior: smooth;
@@ -27,21 +22,8 @@ body {
     line-height: 1.6;
 }
 
-/* --- UNIVERSAL LINK OVERRIDE --- */
-/* This stops the browser from using that hard-to-read dark blue */
-a {
-    color: var(--sky-blue);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-a:hover {
-    color: #ffffff;
-}
-
-/* --- NAVIGATION --- */
 header {
-    height: 80px;
+    height: var(--header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -58,50 +40,30 @@ header {
 .brand-name a {
     color: var(--sky-blue) !important;
     font-weight: 800;
-    letter-spacing: 1px;
+    text-decoration: none;
     font-size: 1.3rem;
 }
 
-.nav-links {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-}
+.nav-links { display: flex; gap: 25px; list-style: none; }
+.nav-links a { color: var(--text-dim); font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+.nav-links a:hover { color: var(--sky-blue); }
 
-.nav-links a {
-    color: var(--text-dim);
-    font-size: 0.9rem;
-    font-weight: 600;
-}
-
-.nav-links a:hover {
-    color: var(--sky-blue);
-}
-
-/* --- DROPDOWN --- */
 .dropdown { position: relative; }
 .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
     background: var(--bg-accent);
+    display: none;
     list-style: none;
     padding: 10px 0;
     min-width: 160px;
-    display: none;
     border-radius: 8px;
     border: 1px solid var(--sky-blue);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 .dropdown:hover .dropdown-menu { display: block; }
-.dropdown-menu li a {
-    padding: 10px 20px;
-    display: block;
-    color: var(--text-main);
-}
-.dropdown-menu li a:hover { background: rgba(56, 189, 248, 0.1); }
+.dropdown-menu li a { padding: 10px 20px; display: block; color: var(--text-main); }
 
-/* --- HERO --- */
 .hero {
     height: 100vh;
     display: flex;
@@ -110,46 +72,31 @@ header {
     align-items: center;
     text-align: center;
 }
-.hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; }
-.hero h2 { color: var(--sky-blue); letter-spacing: 4px; font-weight: 300; }
 
-/* --- CONTENT --- */
-.content-section {
-    padding: 80px 10%;
-    max-width: 900px;
-    margin: 0 auto;
-}
+.content-section { padding: 80px 10%; max-width: 900px; margin: 0 auto; }
+.content-section h2 { color: var(--sky-blue); border-bottom: 2px solid var(--sky-blue); display: inline-block; margin-bottom: 25px; }
 
-.content-section h2 {
-    font-size: 2rem;
-    color: var(--sky-blue);
-    border-bottom: 2px solid var(--sky-blue);
-    display: inline-block;
-    margin-bottom: 25px;
-}
+.about-text p { margin-bottom: 25px; line-height: 1.8; }
 
-/* --- THE EMAIL FIX --- */
 #contact a {
-    font-size: 1.1rem; /* Scaled down from 1.4rem */
+    font-size: 1.1rem;
     font-weight: 700;
-    color: var(--sky-blue) !important; 
-    display: inline-block;
-    margin-top: 5px;
-    text-shadow: 0 0 8px rgba(56, 189, 248, 0.2); /* Softer glow */
+    color: var(--sky-blue) !important;
+    text-decoration: none;
 }
 
-#contact a:hover {
-    color: #ffffff !important;
-    text-shadow: 0 0 12px var(--sky-blue);
-    transform: translateY(-1px); /* Subtle lift on hover */
-}
-
-/* --- BUTTONS --- */
 .btn, .btn-download {
     display: inline-block;
-    margin-top: 20px;
     padding: 12px 28px;
     background: var(--sky-blue);
-    color: #0f172a !important; /* Black text on bright button */
+    color: #0f172a !important;
     border-radius: 6px;
-    font-weight
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.container { padding: 140px 10% 50px; }
+.file-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.file-card { background: var(--bg-accent); padding: 30px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+
+footer { text-align: center; padding: 60px; color: var(--text-dim); }
