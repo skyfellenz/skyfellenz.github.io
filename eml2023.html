@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EML2023 Projects</title>
+    <title>EML2023 | Mechanical Design</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,22 +25,36 @@
     </header>
 
     <div class="container">
-        <h1>EML2023: Mechanical Design</h1>
-        <p>Computer-Aided Design and Assembly Projects.</p>
-
+        <h1>EML 2023: Design & Manufacturing</h1>
+        
+        <h2 style="margin-top:40px; color:var(--sky-blue); border-bottom: 1px solid #334155;">Assemblies</h2>
         <div class="file-grid">
             <div class="file-card">
-                <h3>Final Part Drawing</h3>
-                <p>Detailed technical drawing with dimensions.</p>
-                <a href="final-drawing.pdf" class="btn-download" target="_blank">View PDF</a>
+                <h3>Main Mechanism</h3>
+                <p>Full system assembly showing all moving components and constraints.</p>
+                <a href="cad_files/assemblies/main_assembly.step" class="btn-download" download>Download STEP</a>
             </div>
+        </div>
 
+        <h2 style="margin-top:40px; color:var(--sky-blue); border-bottom: 1px solid #334155;">Technical Drawings</h2>
+        <div class="file-grid">
             <div class="file-card">
-                <h3>Assembly STEP File</h3>
-                <p>Complete 3D assembly for mechanical analysis.</p>
-                <a href="assembly.step" class="btn-download" download>Download STEP</a>
+                <h3>Exploded View</h3>
+                <p>BOM and balloon callouts for the final assembly.</p>
+                <a href="cad_files/drawings/exploded_view.pdf" class="btn-download" target="_blank">View PDF</a>
+            </div>
+        </div>
+
+        <h2 style="margin-top:40px; color:var(--sky-blue); border-bottom: 1px solid #334155;">Individual Parts</h2>
+        <div class="file-grid">
+            <div class="file-card">
+                <h3>Machined Base</h3>
+                <p>Primary structural component designed for CNC milling.</p>
+                <a href="cad_files/parts/base_plate.sldprt" class="btn-download" download>Download Part</a>
             </div>
         </div>
     </div>
+
+    <footer>&copy; 2024 Skyler Fellenz</footer>
 </body>
 </html>
