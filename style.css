@@ -71,8 +71,8 @@ header {
 .dropdown-menu {
     position: absolute;
     top: 100%; 
-    right: 0;    
-    left: auto;     
+    left: 0;        /* Aligns with the left edge of "Projects" */
+    right: auto; 
     background: var(--bg-accent);
     display: none;
     list-style: none;
