@@ -5,44 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EML2023 | Skyler Fellenz</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="brand-name"><a href="index.html">SKYLER FELLENZ</a></div>
-        <nav><ul class="nav-links"><li class="dropdown"><a href="#">Projects ▼</a><ul class="dropdown-menu"><li><a href="coding.html">Coding</a></li><li><a href="eml2023.html">EML2023</a></li><li><a href="grip.html">GRiP</a></li><li><a href="iam3d.html">IAM3D</a></li></ul></li></ul></nav>
+        <nav>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Projects ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="coding.html">Coding</a></li>
+                        <li><a href="eml2023.html">EML2023</a></li>
+                        <li><a href="grip.html">GRiP</a></li>
+                        <li><a href="iam3d.html">IAM3D</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#resume">Resume</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <div class="container">
         <h1>EML 2023: Design & Manufacturing</h1>
-        <p>Mechanical design projects focused on CAD and manufacturing processes.</p>
-
-        <h2 class="category-title">Assemblies</h2>
+        <p>Mechanical design projects focused on CAD modeling, engineering drawings, and manufacturing processes.</p>
+        
         <div class="file-grid">
             <div class="file-card">
-                <h3>Main Assembly</h3>
-                <p>Full system constraints and motion analysis.</p>
-                <a href="cad_files/eml2023/assembly.step" class="btn-download" download>Download STEP</a>
+                <h3>Main Mechanical Assembly</h3>
+                <p>Full system assembly featuring complex motion constraints and interference analysis.</p>
+                <a href="cad_files/eml2023/assembly.step" class="btn-download" download>Download STEP File</a>
             </div>
-        </div>
 
-        <h2 class="category-title">Drawings</h2>
-        <div class="file-grid">
             <div class="file-card">
-                <h3>Technical Drawing</h3>
-                <p>Dimensioned PDF with tolerances and BOM.</p>
-                <a href="cad_files/eml2023/drawing.pdf" class="btn-download" target="_blank">View PDF</a>
+                <h3>Technical Engineering Drawings</h3>
+                <p>Dimensioned PDF drawings including GD&T, Bill of Materials (BOM), and manufacturing tolerances.</p>
+                <a href="cad_files/eml2023/technical_drawing.pdf" class="btn-download" target="_blank">View PDF Drawing</a>
             </div>
-        </div>
 
-        <h2 class="category-title">Parts</h2>
-        <div class="file-grid">
             <div class="file-card">
-                <h3>Mounting Bracket</h3>
-                <p>Individual component designed for CNC milling.</p>
-                <a href="cad_files/eml2023/part.sldprt" class="btn-download" download>Download Part</a>
+                <h3>CNC Machined Mounting Bracket</h3>
+                <p>Individual component designed specifically for 3-axis CNC milling operations.</p>
+                <a href="cad_files/eml2023/bracket.sldprt" class="btn-download" download>Download SLDPRT</a>
             </div>
         </div>
     </div>
-    <footer><p>&copy; 2026 Skyler Fellenz</p></footer>
+
+    <footer>
+        <p>&copy; 2026 Skyler Fellenz</p>
+    </footer>
 </body>
 </html>
