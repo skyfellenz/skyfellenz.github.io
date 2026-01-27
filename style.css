@@ -23,7 +23,7 @@ body {
 header {
     height: 80px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Pushes Brand Left, Nav Right */
     align-items: center;
     padding: 0 5%;
     position: fixed;
@@ -43,16 +43,35 @@ header {
     letter-spacing: 1px; 
 }
 
-.nav-links { display: flex; gap: 35px; list-style: none; }
-.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 10px 0; transition: 0.3s; }
+.nav-links { 
+    display: flex; 
+    gap: 35px; 
+    list-style: none; 
+    align-items: center;
+}
+
+.nav-links a { 
+    color: var(--text-dim); 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 0.95rem; 
+    padding: 10px 0; 
+    transition: 0.3s; 
+}
+
 .nav-links a:hover { color: var(--sky-blue); }
 
-/* --- DROPDOWN BRIDGE FIX --- */
-.dropdown { position: relative; padding-bottom: 25px; margin-bottom: -25px; } 
+/* --- DROPDOWN (Far Right) --- */
+.dropdown { 
+    position: relative; 
+    padding-bottom: 25px; 
+    margin-bottom: -25px; 
+} 
+
 .dropdown-menu {
     position: absolute;
     top: 100%; 
-    left: 0;
+    right: 0; /* Aligns the menu box to the right edge of the link */
     background: var(--bg-accent);
     display: none;
     list-style: none;
@@ -63,81 +82,7 @@ header {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     margin-top: 5px;
 }
+
 .dropdown:hover .dropdown-menu { display: block; }
 .dropdown-menu li { padding: 5px 20px; }
-.dropdown-menu li a { color: var(--text-main); display: block; padding: 8px 0; font-size: 0.9rem; }
-
-/* --- HERO SECTION (FULL PAGE) --- */
-.hero { 
-    height: 100vh; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-}
-.hero h1 { font-size: clamp(3.5rem, 10vw, 5.5rem); font-weight: 800; margin-bottom: 10px; color: #fff; }
-.hero h2 { color: var(--sky-blue); letter-spacing: 6px; font-size: 1.4rem; margin-bottom: 20px; font-weight: 400; }
-
-/* --- PROJECT PAGE CONTAINER FIX --- */
-/* Pushes project content down 140px (80px for taskbar + 60px gap) */
-.container { 
-    padding: 140px 10% 80px; 
-    max-width: 1000px; 
-    margin: 0 auto;
-    min-height: 85vh; 
-}
-
-.container h1 {
-    color: var(--sky-blue);
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-/* --- CONTENT SPACING (HOMEPAGE) --- */
-.content-section { padding: 120px 10%; max-width: 1000px; margin: 0 auto; }
-.content-section h2 { 
-    color: var(--sky-blue); 
-    margin-bottom: 30px; 
-    font-size: 2.2rem; 
-    border-bottom: 2px solid var(--sky-blue); 
-    display: inline-block; 
-}
-.about-text p { margin-bottom: 30px; }
-
-/* --- VERTICAL PROJECT BOXES --- */
-.file-grid { 
-    display: flex; 
-    flex-direction: column; 
-    gap: 30px; 
-    margin-top: 30px;
-    width: 100%; 
-}
-.file-card {
-    background: var(--bg-accent);
-    padding: 40px; 
-    border-radius: 15px;
-    border: 1px solid rgba(56, 189, 248, 0.2);
-    width: 100%;
-    transition: 0.3s ease;
-}
-.file-card:hover {
-    border-color: var(--sky-blue);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(56, 189, 248, 0.15);
-}
-
-/* --- BUTTONS & LINKS --- */
-.btn-download {
-    display: inline-block;
-    background: var(--sky-blue);
-    color: #0f172a !important;
-    padding: 12px 35px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 800;
-    margin-top: 15px;
-    transition: 0.3s ease;
-}
-.email-link { color: var(--sky-blue) !important; font-weight: 700; text-decoration: none; font-size: 1.25rem; }
-
-footer { padding: 100px 0; text-align: center; color: var(--text-dim); }
+.dropdown-menu li a { color: var(--text-main); display: block; padding: 8px
