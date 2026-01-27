@@ -2,59 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Coding Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Repository</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
-        <div class="brand-name"><a href="index.html">Skyler Fellenz</a></div>
+        <div class="brand-name"><a href="index.html">SKYLER FELLENZ</a></div>
         <nav>
-            <ul>
-                <li><a href="coding.html">Coding &#9662;</a>
-                    <div class="dropdown-content">
-                        <a href="coding.html#matlab">MATLAB</a>
-                        <a href="coding.html#python">Python</a>
-                        <a href="coding.html#java">Java</a>
-                    </div>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Projects ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="coding.html">Coding</a></li>
+                        <li><a href="eml2023.html">EML2023</a></li>
+                        <li><a href="grip.html">GRiP</a></li>
+                        <li><a href="iam3d.html">IAM3D</a></li>
+                    </ul>
                 </li>
-                <li><a href="eml2023.html">EML2023</a></li>
-                <li><a href="grip.html">GRiP</a></li>
-                <li><a href="iam3d.html">IAM3D</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
         <h1>Coding Repository</h1>
-
-        <h2 id="matlab" style="color:#38bdf8; border-bottom:1px solid #334155; padding-bottom:10px;">MATLAB</h2>
+        
+        <h2>MATLAB</h2>
         <div class="file-grid">
             <div class="file-card">
                 <h3>Vibration Analysis</h3>
-                <p>Script to analyze damping ratios.</p>
-                <a href="#" class="btn-download">Download .m</a>
+                <p>Script to analyze damping ratios and system response.</p>
+                <a href="vibrations.m" class="btn-download">Download .m</a>
             </div>
-            </div>
+        </div>
 
-        <h2 id="python" style="color:#38bdf8; border-bottom:1px solid #334155; padding-bottom:10px; margin-top:3rem;">Python</h2>
+        <h2 style="margin-top: 40px;">Python</h2>
         <div class="file-grid">
             <div class="file-card">
                 <h3>Auto-CAD Exporter</h3>
-                <p>Automation script for file conversion.</p>
-                <a href="#" class="btn-download">Download .py</a>
-            </div>
-        </div>
-
-        <h2 id="java" style="color:#38bdf8; border-bottom:1px solid #334155; padding-bottom:10px; margin-top:3rem;">Java</h2>
-        <div class="file-grid">
-            <div class="file-card">
-                <h3>Sorting Algorithms</h3>
-                <p>Bubble sort and Quick sort implementation.</p>
-                <a href="#" class="btn-download">Download .java</a>
+                <p>Automation script for file conversion and export.</p>
+                <a href="exporter.py" class="btn-download">Download .py</a>
             </div>
         </div>
     </div>
-
 </body>
 </html>
