@@ -130,17 +130,18 @@ header {
 
 /* --- THE EMAIL FIX --- */
 #contact a {
-    font-size: 1.4rem;
+    font-size: 1.1rem; /* Scaled down from 1.4rem */
     font-weight: 700;
-    color: var(--sky-blue) !important; /* Force visibility */
+    color: var(--sky-blue) !important; 
     display: inline-block;
-    margin-top: 10px;
-    text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+    margin-top: 5px;
+    text-shadow: 0 0 8px rgba(56, 189, 248, 0.2); /* Softer glow */
 }
 
 #contact a:hover {
     color: #ffffff !important;
-    text-shadow: 0 0 15px var(--sky-blue);
+    text-shadow: 0 0 12px var(--sky-blue);
+    transform: translateY(-1px); /* Subtle lift on hover */
 }
 
 /* --- BUTTONS --- */
