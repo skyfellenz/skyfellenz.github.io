@@ -38,74 +38,69 @@ header {
 .brand-name a { color: var(--sky-blue) !important; font-weight: 800; text-decoration: none; font-size: 1.4rem; letter-spacing: 1px; }
 
 .nav-links { display: flex; gap: 35px; list-style: none; }
-.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
+.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; padding: 10px 0; }
 .nav-links a:hover { color: var(--sky-blue); }
 
-/* DROPDOWN FIX */
-.dropdown { position: relative; }
+/* DROPDOWN FIX: Ensures menu stays open */
+.dropdown { position: relative; padding-bottom: 20px; margin-bottom: -20px; } /* Creates an invisible bridge */
 .dropdown-menu {
     position: absolute;
-    top: 55px; 
+    top: 100%; /* Sits directly below the link */
     left: 0;
     background: var(--bg-accent);
     display: none;
     list-style: none;
-    padding: 15px 0;
+    padding: 10px 0;
     min-width: 180px;
     border: 1px solid var(--sky-blue);
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-top: 5px;
 }
 .dropdown:hover .dropdown-menu { display: block; }
 .dropdown-menu li { padding: 5px 20px; }
 .dropdown-menu li a { color: var(--text-main); display: block; padding: 8px 0; font-size: 0.9rem; }
 
-/* HERO SECTION (CENTERED & LARGE) */
-.hero { 
-    height: 100vh;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center;
-}
+/* HERO SECTION */
+.hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
 .hero h1 { font-size: clamp(3rem, 10vw, 5.5rem); font-weight: 800; margin-bottom: 10px; color: #fff; }
 .hero h2 { color: var(--sky-blue); letter-spacing: 6px; font-size: 1.4rem; margin-bottom: 20px; font-weight: 400; }
-.hero p { color: var(--text-dim); font-size: 1.1rem; }
 
 /* CONTENT AREA */
 .content-section { padding: 120px 10%; max-width: 950px; margin: 0 auto; }
-.content-section h2 { 
-    color: var(--sky-blue); 
-    margin-bottom: 30px; 
-    font-size: 2.2rem;
-    border-bottom: 2px solid var(--sky-blue);
-    display: inline-block;
-}
-
+.content-section h2 { color: var(--sky-blue); margin-bottom: 30px; font-size: 2.2rem; border-bottom: 2px solid var(--sky-blue); display: inline-block; }
 .about-text p { margin-bottom: 30px; }
 
 .btn-download {
     display: inline-block;
     background: var(--sky-blue);
     color: #0f172a !important;
-    padding: 15px 40px;
+    padding: 12px 30px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 800;
-    margin-top: 25px;
+    margin-top: 15px;
     transition: 0.3s;
 }
-.btn-download:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4); }
+.btn-download:hover { background: #fff; transform: translateY(-3px); }
 
 .email-link { color: var(--sky-blue) !important; font-weight: 700; text-decoration: none; font-size: 1.25rem; }
 
-/* KEEP BOXES ONLY FOR SUB-PAGES */
-.file-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+/* VERTICAL STACK FOR PROJECT BOXES */
+.file-grid { 
+    display: flex; 
+    flex-direction: column; /* Forces vertical stack */
+    gap: 30px; 
+    margin-top: 30px;
+    max-width: 800px; /* Keeps boxes from becoming too wide on desktop */
+}
+
 .file-card {
     background: var(--bg-accent);
     padding: 30px;
     border-radius: 15px;
     border: 1px solid rgba(56, 189, 248, 0.2);
+    width: 100%; /* Ensures they take full width of container */
 }
 
-footer { padding: 100px 0; text-align: center; color: var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); }
+footer { padding: 100px 0; text-align: center; color: var(--text-dim); }
