@@ -141,3 +141,35 @@ header {
 }
 
 footer { text-align: center; padding: 50px; color: var(--text-dim); }
+
+/* --- CONTACT CARD STYLES --- */
+.contact-card {
+    background: var(--bg-accent);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(56, 189, 248, 0.3); /* Subtle blue border */
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-card p {
+    margin-bottom: 15px;
+    color: var(--text-dim);
+}
+
+.email-link {
+    font-size: 1.5rem; /* Larger font size */
+    font-weight: 700;
+    color: var(--sky-blue) !important; /* Forces the bright blue */
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+    word-break: break-all; /* Prevents overflow on small screens */
+    text-shadow: 0 0 15px rgba(56, 189, 248, 0.4); /* Glow effect */
+}
+
+.email-link:hover {
+    color: #fff !important;
+    text-shadow: 0 0 25px rgba(56, 189, 248, 0.8);
+    transform: scale(1.02);
+}
