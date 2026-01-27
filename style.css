@@ -71,7 +71,8 @@ header {
 .dropdown-menu {
     position: absolute;
     top: 100%; 
-    right: 0; /* Aligns the menu box to the right edge of the link */
+    right: 0;    
+    left: auto;     
     background: var(--bg-accent);
     display: none;
     list-style: none;
