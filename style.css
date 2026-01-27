@@ -1,68 +1,96 @@
-/* style.css - Skyler Fellenz Portfolio */
-
 :root {
     --bg-dark: #0f172a; 
     --bg-accent: #1e293b;
     --sky-blue: #38bdf8;
     --text-main: #f8fafc;
-    --text-dim: #94a3b8;
-    --header-height: 80px; /* Reference variable for spacing */
 }
 
-* { 
-    box-sizing: border-box; 
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-body, html {
-    background: radial-gradient(circle at top right, #1e293b, #0f172a);
+body {
+    background: #0f172a;
+    background-attachment: fixed;
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
-    min-height: 100vh;
-    line-height: 1.6;
 }
 
-/* --- NAVIGATION --- */
 header {
-    height: var(--header-height);
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 8%;
+    padding: 0 5%;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 1000;
-    background: rgba(15, 23, 42, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+    z-index: 9999;
+    background: #1e293b;
+    border-bottom: 1px solid var(--sky-blue);
 }
 
 .brand-name a {
     color: var(--sky-blue);
     text-decoration: none;
     font-weight: 800;
-    letter-spacing: 2px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
     list-style: none;
-    align-items: center;
+    gap: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-dim);
-    font-size: 0.9rem;
+    color: #94a3b8;
     font-weight: 500;
-    transition: all 0.3s ease;
 }
 
-.nav-links a:hover { 
-    color:
+.nav-links a:hover { color: var(--sky-blue); }
+
+/* DROPDOWN */
+.dropdown { position: relative; }
+.dropdown-menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background: #1e293b;
+    display: none;
+    list-style: none;
+    padding: 10px;
+    min-width: 150px;
+    border: 1px solid var(--sky-blue);
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li { margin: 10px 0; }
+
+/* SECTIONS */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.content-section {
+    padding: 20px 10%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--sky-blue);
+    color: #000;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+footer { padding: 50px; text-align: center; color: #94a3b8; }
