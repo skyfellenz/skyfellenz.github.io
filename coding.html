@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Repository</title>
+    <title>Coding Repository | MATLAB</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -20,30 +21,40 @@
                         <li><a href="iam3d.html">IAM3D</a></li>
                     </ul>
                 </li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="container">
-        <h1>Coding Repository</h1>
+        <h1 style="color: var(--sky-blue); margin-bottom: 10px;">Coding Repository</h1>
+        <p style="color: var(--text-dim); margin-bottom: 40px;">Technical computing and simulations developed in MATLAB.</p>
         
-        <h2>MATLAB</h2>
+        <h2>MATLAB Projects</h2>
         <div class="file-grid">
             <div class="file-card">
                 <h3>Vibration Analysis</h3>
-                <p>Script to analyze damping ratios and system response.</p>
-                <a href="vibrations.m" class="btn-download">Download .m</a>
+                <p>Computational script designed to analyze damping ratios, natural frequencies, and system responses for mechanical oscillators.</p>
+                <a href="vibrations.m" class="btn-download" download>Download .m File</a>
             </div>
-        </div>
 
-        <h2 style="margin-top: 40px;">Python</h2>
-        <div class="file-grid">
             <div class="file-card">
-                <h3>Auto-CAD Exporter</h3>
-                <p>Automation script for file conversion and export.</p>
-                <a href="exporter.py" class="btn-download">Download .py</a>
+                <h3>Numerical Methods</h3>
+                <p>Implementation of ODE solvers and root-finding algorithms for engineering applications.</p>
+                <a href="numerical_methods.m" class="btn-download" download>Download .m File</a>
+            </div>
+
+            <div class="file-card">
+                <h3>Data Visualization</h3>
+                <p>Custom plotting scripts for processing sensor data and generating publication-quality figures.</p>
+                <a href="viz_tool.m" class="btn-download" download>Download .m File</a>
             </div>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Skyler Fellenz</p>
+    </footer>
 </body>
 </html>
