@@ -1,6 +1,6 @@
 /* style.css */
 :root {
-    --bg-dark: #0f172a; /* Deep Blue/Grey */
+    --bg-dark: #0f172a; 
     --bg-accent: #1e293b;
     --sky-blue: #38bdf8;
     --text-main: #f8fafc;
@@ -16,6 +16,7 @@ body, html {
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
+    min-height: 100vh;
 }
 
 /* --- NAVIGATION --- */
@@ -44,6 +45,8 @@ header {
     display: flex;
     gap: 25px;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links a {
@@ -61,15 +64,16 @@ header {
 
 .dropdown-menu {
     position: absolute;
-    top: 100%; /* Directly below */
+    top: 100%;
     left: 0;
     background: var(--bg-accent);
     list-style: none;
     padding: 10px 0;
-    min-width: 150px;
+    min-width: 160px;
     display: none;
     border-radius: 8px;
     box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    border: 1px solid rgba(56, 189, 248, 0.1);
 }
 
 .dropdown:hover .dropdown-menu { display: block; }
@@ -80,49 +84,4 @@ header {
     color: var(--text-main);
 }
 
-.dropdown-menu li a:hover { background: rgba(56, 189, 248, 0.1); }
-
-/* --- SECTIONS --- */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-.hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin: 0; }
-.hero h2 { color: var(--sky-blue); letter-spacing: 5px; font-weight: 300; }
-
-.content-section {
-    padding: 100px 10%;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.content-section h2 {
-    font-size: 2rem;
-    border-bottom: 2px solid var(--sky-blue);
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background: var(--sky-blue);
-    color: #000;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-/* --- MOBILE RESPONSIVENESS --- */
-@media (max-width: 768px) {
-    .nav-links { display: none; } /* Consider adding a mobile toggle button later */
-    .hero h1 { font-size: 3rem; }
-    .content-section { padding: 60px 5%; }
-}
+.dropdown-menu li a:hover { background: rgba(56, 189, 248, 0.1); color: var(--sky
