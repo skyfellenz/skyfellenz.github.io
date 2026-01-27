@@ -78,7 +78,15 @@ header {
 .hero h1 { font-size: clamp(3.5rem, 10vw, 5.5rem); font-weight: 800; margin-bottom: 10px; color: #fff; }
 .hero h2 { color: var(--sky-blue); letter-spacing: 6px; font-size: 1.4rem; margin-bottom: 20px; font-weight: 400; }
 
-/* --- CONTENT SPACING --- */
+/* --- PROJECT PAGE CONTAINER FIX --- */
+/* This pushes the content down so it doesn't hide under the 80px header */
+.container { 
+    padding: 140px 10% 50px; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+/* --- CONTENT SPACING (HOMEPAGE) --- */
 .content-section { padding: 120px 10%; max-width: 1000px; margin: 0 auto; }
 .content-section h2 { 
     color: var(--sky-blue); 
