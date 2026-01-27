@@ -16,7 +16,7 @@ body {
     background-attachment: fixed;
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
-    line-height: 1.8; /* Increased line height to stop text smashing */
+    line-height: 1.8;
 }
 
 header {
@@ -36,14 +36,15 @@ header {
 
 .brand-name a { color: var(--sky-blue) !important; font-weight: 800; text-decoration: none; font-size: 1.5rem; }
 
-/* FIXING THE SMASHED DROPDOWN */
+/* DROPDOWN NAVIGATION */
 .nav-links { display: flex; gap: 35px; list-style: none; }
 .nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 1rem; }
+.nav-links a:hover { color: var(--sky-blue); }
 
 .dropdown { position: relative; }
 .dropdown-menu {
     position: absolute;
-    top: 50px; /* Space it below the nav link */
+    top: 50px; 
     left: 0;
     background: var(--bg-accent);
     display: none;
@@ -58,9 +59,9 @@ header {
 .dropdown-menu li { padding: 5px 20px; }
 .dropdown-menu li a { color: var(--text-main); display: block; padding: 8px 0; }
 
-/* FIXING THE HERO SIZE */
+/* HERO SECTION (RESTORED SCALE) */
 .hero { 
-    height: 100vh; /* This forces it to take the full screen height */
+    height: 100vh;
     display: flex; 
     justify-content: center; 
     align-items: center; 
@@ -70,17 +71,17 @@ header {
 .hero h1 { font-size: clamp(3rem, 10vw, 5.5rem); font-weight: 800; margin-bottom: 10px; }
 .hero h2 { color: var(--sky-blue); letter-spacing: 5px; font-size: 1.5rem; margin-bottom: 20px; }
 
-/* SPACING OUT SECTIONS */
-.content-section { padding: 120px 10%; max-width: 1100px; margin: 0 auto; }
-.about-text p { margin-bottom: 30px; }
-
-.file-card {
-    background: var(--bg-accent);
-    padding: 50px; /* Bigger boxes */
-    border-radius: 20px;
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    text-align: center;
+/* CONTENT SPACING */
+.content-section { padding: 120px 10%; max-width: 900px; margin: 0 auto; }
+.content-section h2 { 
+    color: var(--sky-blue); 
+    margin-bottom: 25px; 
+    font-size: 2rem;
+    border-bottom: 2px solid var(--sky-blue);
+    display: inline-block;
 }
+
+.about-text p { margin-bottom: 30px; }
 
 .btn-download {
     display: inline-block;
@@ -91,6 +92,19 @@ header {
     text-decoration: none;
     font-weight: 800;
     margin-top: 25px;
+    transition: 0.3s;
+}
+.btn-download:hover { background: #fff; transform: translateY(-3px); }
+
+.email-link { color: var(--sky-blue) !important; font-weight: 700; text-decoration: none; font-size: 1.2rem; }
+
+/* PROJECT PAGE BOXES (KEEPING FOR SUB-PAGES) */
+.file-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+.file-card {
+    background: var(--bg-accent);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
 footer { padding: 80px 0; text-align: center; color: var(--text-dim); }
