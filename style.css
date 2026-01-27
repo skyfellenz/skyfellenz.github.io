@@ -11,7 +11,7 @@
 html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
 body {
-    background: var(--bg-navy);
+    background-color: var(--bg-navy);
     background-image: radial-gradient(circle at top right, var(--bg-accent), var(--bg-navy));
     background-attachment: fixed;
     color: var(--text-main);
@@ -19,6 +19,7 @@ body {
     line-height: 1.8;
 }
 
+/* --- HEADER & NAV --- */
 header {
     height: 80px;
     display: flex;
@@ -34,17 +35,17 @@ header {
     border-bottom: 1px solid rgba(56, 189, 248, 0.2);
 }
 
-.brand-name a { color: var(--sky-blue) !important; font-weight: 800; text-decoration: none; font-size: 1.5rem; }
+.brand-name a { color: var(--sky-blue) !important; font-weight: 800; text-decoration: none; font-size: 1.4rem; letter-spacing: 1px; }
 
-/* DROPDOWN NAVIGATION */
 .nav-links { display: flex; gap: 35px; list-style: none; }
-.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 1rem; }
+.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.95rem; transition: 0.3s; }
 .nav-links a:hover { color: var(--sky-blue); }
 
+/* DROPDOWN FIX */
 .dropdown { position: relative; }
 .dropdown-menu {
     position: absolute;
-    top: 50px; 
+    top: 55px; 
     left: 0;
     background: var(--bg-accent);
     display: none;
@@ -53,30 +54,30 @@ header {
     min-width: 180px;
     border: 1px solid var(--sky-blue);
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 .dropdown:hover .dropdown-menu { display: block; }
 .dropdown-menu li { padding: 5px 20px; }
-.dropdown-menu li a { color: var(--text-main); display: block; padding: 8px 0; }
+.dropdown-menu li a { color: var(--text-main); display: block; padding: 8px 0; font-size: 0.9rem; }
 
-/* HERO SECTION (RESTORED SCALE) */
+/* HERO SECTION (CENTERED & LARGE) */
 .hero { 
     height: 100vh;
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    text-align: center; 
-    padding-top: 80px;
+    text-align: center;
 }
-.hero h1 { font-size: clamp(3rem, 10vw, 5.5rem); font-weight: 800; margin-bottom: 10px; }
-.hero h2 { color: var(--sky-blue); letter-spacing: 5px; font-size: 1.5rem; margin-bottom: 20px; }
+.hero h1 { font-size: clamp(3rem, 10vw, 5.5rem); font-weight: 800; margin-bottom: 10px; color: #fff; }
+.hero h2 { color: var(--sky-blue); letter-spacing: 6px; font-size: 1.4rem; margin-bottom: 20px; font-weight: 400; }
+.hero p { color: var(--text-dim); font-size: 1.1rem; }
 
-/* CONTENT SPACING */
-.content-section { padding: 120px 10%; max-width: 900px; margin: 0 auto; }
+/* CONTENT AREA */
+.content-section { padding: 120px 10%; max-width: 950px; margin: 0 auto; }
 .content-section h2 { 
     color: var(--sky-blue); 
-    margin-bottom: 25px; 
-    font-size: 2rem;
+    margin-bottom: 30px; 
+    font-size: 2.2rem;
     border-bottom: 2px solid var(--sky-blue);
     display: inline-block;
 }
@@ -88,17 +89,17 @@ header {
     background: var(--sky-blue);
     color: #0f172a !important;
     padding: 15px 40px;
-    border-radius: 10px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: 800;
     margin-top: 25px;
     transition: 0.3s;
 }
-.btn-download:hover { background: #fff; transform: translateY(-3px); }
+.btn-download:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4); }
 
-.email-link { color: var(--sky-blue) !important; font-weight: 700; text-decoration: none; font-size: 1.2rem; }
+.email-link { color: var(--sky-blue) !important; font-weight: 700; text-decoration: none; font-size: 1.25rem; }
 
-/* PROJECT PAGE BOXES (KEEPING FOR SUB-PAGES) */
+/* KEEP BOXES ONLY FOR SUB-PAGES */
 .file-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
 .file-card {
     background: var(--bg-accent);
@@ -107,4 +108,4 @@ header {
     border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
-footer { padding: 80px 0; text-align: center; color: var(--text-dim); }
+footer { padding: 100px 0; text-align: center; color: var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); }
