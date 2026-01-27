@@ -6,16 +6,9 @@
     --text-dim: #94a3b8;
 }
 
-* { 
-    box-sizing: border-box; 
-    margin: 0; 
-    padding: 0; 
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { 
-    scroll-behavior: smooth; 
-    scroll-padding-top: 100px; 
-}
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
 body {
     background-color: var(--bg-navy);
@@ -50,19 +43,86 @@ header {
     letter-spacing: 1px; 
 }
 
-.nav-links { 
+.nav-links { display: flex; gap: 35px; list-style: none; }
+.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.95rem; padding: 10px 0; transition: 0.3s; }
+.nav-links a:hover { color: var(--sky-blue); }
+
+/* --- DROPDOWN BRIDGE FIX --- */
+.dropdown { position: relative; padding-bottom: 25px; margin-bottom: -25px; } 
+.dropdown-menu {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: var(--bg-accent);
+    display: none;
+    list-style: none;
+    padding: 15px 0;
+    min-width: 180px;
+    border: 1px solid var(--sky-blue);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-top: 5px;
+}
+.dropdown:hover .dropdown-menu { display: block; }
+.dropdown-menu li { padding: 5px 20px; }
+.dropdown-menu li a { color: var(--text-main); display: block; padding: 8px 0; font-size: 0.9rem; }
+
+/* --- HERO SECTION (FULL PAGE) --- */
+.hero { 
+    height: 100vh; 
     display: flex; 
-    gap: 35px; 
-    list-style: none; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+}
+.hero h1 { font-size: clamp(3.5rem, 10vw, 5.5rem); font-weight: 800; margin-bottom: 10px; color: #fff; }
+.hero h2 { color: var(--sky-blue); letter-spacing: 6px; font-size: 1.4rem; margin-bottom: 20px; font-weight: 400; }
+
+/* --- CONTENT SPACING --- */
+.content-section { padding: 120px 10%; max-width: 1000px; margin: 0 auto; }
+.content-section h2 { 
+    color: var(--sky-blue); 
+    margin-bottom: 30px; 
+    font-size: 2.2rem; 
+    border-bottom: 2px solid var(--sky-blue); 
+    display: inline-block; 
+}
+.about-text p { margin-bottom: 30px; }
+
+/* --- VERTICAL PROJECT BOXES --- */
+.file-grid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px; 
+    margin-top: 30px;
+    width: 100%; 
+}
+.file-card {
+    background: var(--bg-accent);
+    padding: 40px; 
+    border-radius: 15px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    width: 100%;
+    transition: 0.3s ease;
+}
+.file-card:hover {
+    border-color: var(--sky-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(56, 189, 248, 0.15);
 }
 
-.nav-links a { 
-    color: var(--text-dim); 
-    text-decoration: none; 
-    font-weight: 600; 
-    font-size: 0.95rem; 
-    transition: 0.3s; 
-    padding: 10px 0; 
+/* --- BUTTONS & LINKS --- */
+.btn-download {
+    display: inline-block;
+    background: var(--sky-blue);
+    color: #0f172a !important;
+    padding: 12px 35px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 800;
+    margin-top: 15px;
+    transition: 0.3s ease;
 }
+.email-link { color: var(--sky-blue) !important; font-weight: 700; text-decoration: none; font-size: 1.25rem; }
 
-.
+footer { padding: 100px 0; text-align: center; color: var(--text-dim); }
