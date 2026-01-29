@@ -5,6 +5,7 @@
     --sky-blue: #38bdf8;
     --text-main: #f8fafc;
     --text-dim: #94a3b8;
+    --disabled-grey: #334155;
 }
 
 /* --- RESET & BASE STYLES --- */
@@ -14,11 +15,11 @@ html { scroll-behavior: smooth; }
 body {
     background-color: var(--bg-navy);
     color: var(--text-main);
-    font-family: 'Inter', sans-serif;
+    font-family: Arial, Helvetica, sans-serif; /* Clean, readable Arial */
     line-height: 1.6;
 }
 
-/* --- NAVIGATION --- */
+/* --- NAVIGATION & DROPDOWN --- */
 header {
     height: 80px;
     display: flex;
@@ -33,12 +34,13 @@ header {
     border-bottom: 1px solid rgba(56, 189, 248, 0.1);
 }
 
-.brand-name a { color: var(--sky-blue) !important; font-weight: 800; text-decoration: none; font-size: 1.3rem; }
+.brand-name a { color: var(--sky-blue) !important; font-weight: bold; text-decoration: none; font-size: 1.2rem; }
 .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
-.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--sky-blue); }
 
-/* --- DROPDOWN FIXES --- */
-.dropdown { position: relative; padding: 15px 0; }
+/* Stability Bridge for Dropdown */
+.dropdown { position: relative; padding: 15px 0; } 
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -47,16 +49,15 @@ header {
     display: none;
     list-style: none;
     padding: 15px;
-    min-width: 240px;
+    min-width: 260px;
     border-radius: 8px;
     border: 1px solid var(--sky-blue);
-    z-index: 20000;
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 .dropdown:hover .dropdown-menu { display: block; }
-.status-label { font-size: 0.75rem; color: var(--text-dim); display: block; font-style: italic; margin-top: 2px; }
+.status-label { font-size: 0.75rem; color: var(--text-dim); font-style: italic; margin-left: 5px; }
 
-/* --- HERO SECTION (FULL SCREEN) --- */
+/* --- HERO SECTION (MATCHING IMAGE) --- */
 .hero { 
     height: 100vh; 
     display: flex; 
@@ -64,24 +65,41 @@ header {
     align-items: center; 
     text-align: center;
     flex-direction: column;
+    padding: 20px;
 }
 
-.hero h1 { font-size: 4.5rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 10px; }
-.hero h2 { color: var(--sky-blue); letter-spacing: 8px; font-size: 1.2rem; margin-bottom: 15px; text-transform: uppercase; }
-.hero p { color: var(--text-dim); font-size: 1rem; letter-spacing: 1px; }
+.hero h1 { 
+    font-size: clamp(2.5rem, 8vw, 4.5rem); 
+    font-weight: 900; 
+    letter-spacing: 1px; 
+    margin-bottom: 10px; 
+    text-transform: uppercase;
+}
 
-/* --- LAYOUT --- */
+.hero h2 { 
+    color: var(--sky-blue); 
+    letter-spacing: 5px; 
+    font-size: 1.1rem; 
+    margin-bottom: 15px; 
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.hero p { 
+    color: var(--text-dim); 
+    font-size: 0.95rem; 
+    letter-spacing: 0.5px;
+}
+
+/* --- CONTAINERS & TITLES --- */
 section.container, .container { 
-    padding-top: 120px; 
-    padding-bottom: 80px;
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 120px 10% 80px; 
     max-width: 1100px; 
     margin: 0 auto; 
 }
 
 .section-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--sky-blue);
     margin-bottom: 25px;
     border-left: 4px solid var(--sky-blue);
@@ -89,12 +107,21 @@ section.container, .container {
     text-transform: uppercase;
 }
 
+/* --- CARDS & GREYED OUT EFFECT --- */
 .file-card {
     background: var(--bg-accent);
     padding: 30px;
     border-radius: 12px;
     border: 1px solid rgba(56, 189, 248, 0.1);
     margin-bottom: 30px;
+}
+
+/* The Greyed Out Class */
+.card-disabled {
+    opacity: 0.5;
+    background: #1a2233; /* Darker grey-navy */
+    filter: grayscale(1);
+    pointer-events: none; /* Prevents clicking */
 }
 
 /* --- BUTTONS --- */
@@ -105,16 +132,13 @@ section.container, .container {
     padding: 12px 25px;
     border-radius: 6px;
     text-decoration: none;
-    font-weight: 800;
+    font-weight: bold;
     margin-top: 15px;
-    transition: 0.3s;
 }
 
-/* Updated Coming Soon Style */
 .btn-coming-soon {
-    background: #334155;
+    background: var(--disabled-grey);
     color: var(--text-dim) !important;
-    cursor: default;
 }
 
-footer { padding: 60px 0; text-align: center; color: var(--text-dim); }
+footer { padding: 60px 0; text-align: center; color: var(--text-dim); font-size: 0.8rem; }
