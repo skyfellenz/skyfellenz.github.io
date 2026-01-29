@@ -13,12 +13,12 @@ body {
     background-color: var(--bg-navy);
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* --- NAVIGATION --- */
 header {
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -32,12 +32,12 @@ header {
     border-bottom: 1px solid rgba(56, 189, 248, 0.1);
 }
 
-.brand-name a { color: var(--sky-blue) !important; font-weight: 800; text-decoration: none; font-size: 1.3rem; }
-.nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
-.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+.brand-name a { color: var(--sky-blue) !important; font-weight: 800; text-decoration: none; font-size: 1.2rem; }
+.nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
+.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
 .nav-links a:hover { color: var(--sky-blue); }
 
-.dropdown { position: relative; padding-bottom: 10px; margin-bottom: -10px; }
+.dropdown { position: relative; }
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -45,47 +45,46 @@ header {
     background: var(--bg-accent);
     display: none;
     list-style: none;
-    padding: 15px;
-    min-width: 250px;
-    border-radius: 8px;
+    padding: 12px;
+    min-width: 220px;
+    border-radius: 6px;
     border: 1px solid var(--sky-blue);
 }
 .dropdown:hover .dropdown-menu { display: block; }
-.status-label { font-size: 0.75rem; color: #64748b; margin-left: 5px; font-style: italic; }
 
 /* --- HERO --- */
-.hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
-.main-title { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; color: #fff; margin-bottom: 5px; letter-spacing: -2px; }
-.sub-title { font-size: 1.5rem; color: var(--sky-blue); letter-spacing: 10px; text-transform: uppercase; margin-bottom: 25px; }
-.tagline { color: var(--text-dim); font-size: 1.1rem; letter-spacing: 1px; }
+.hero { height: 85vh; display: flex; justify-content: center; align-items: center; text-align: center; }
+.main-title { font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 900; color: #fff; margin-bottom: 5px; }
+.sub-title { font-size: 1.2rem; color: var(--sky-blue); letter-spacing: 8px; text-transform: uppercase; margin-bottom: 20px; }
+.tagline { color: var(--text-dim); font-size: 1rem; }
 
-/* --- TIGHTENED SECTIONS --- */
-.container { 
-    padding: 40px 10%; /* Reduced from 100px to 40px */
-    max-width: 1100px; 
-    margin: 0 auto; 
+/* --- ULTRA TIGHT SPACING --- */
+section.container { 
+    padding: 10px 10%; /* Very little top/bottom padding */
+    margin-bottom: 10px; /* Minimal space between sections */
+    max-width: 1000px; 
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .section-title {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     color: var(--sky-blue);
-    margin-bottom: 15px;
-    border-left: 4px solid var(--sky-blue);
-    padding-left: 15px;
+    margin-bottom: 8px; /* Tighter title margin */
+    border-left: 3px solid var(--sky-blue);
+    padding-left: 12px;
     text-transform: uppercase;
-    letter-spacing: 2px;
 }
 
 .file-card {
     background: var(--bg-accent);
-    padding: 30px;
-    border-radius: 15px;
-    border: 1px solid rgba(56, 189, 248, 0.1);
+    padding: 20px; /* Tight card padding */
+    border-radius: 12px;
+    border: 1px solid rgba(56, 189, 248, 0.05);
 }
 
-/* Paragraph spacing inside About Me */
 .file-card p {
-    margin-bottom: 20px; /* This creates the "Enter" key space automatically */
+    margin-bottom: 15px; 
 }
 .file-card p:last-child {
     margin-bottom: 0;
@@ -96,12 +95,11 @@ header {
     display: inline-block;
     background: var(--sky-blue);
     color: var(--bg-navy) !important;
-    padding: 10px 25px;
-    border-radius: 8px;
+    padding: 8px 20px;
+    border-radius: 6px;
     text-decoration: none;
-    font-weight: 800;
-    margin-top: 10px;
+    font-weight: 700;
+    margin-top: 5px;
 }
-.btn-disabled { background: #475569 !important; cursor: not-allowed; opacity: 0.6; }
 
-footer { padding: 40px 0; text-align: center; color: var(--text-dim); font-size: 0.8rem; }
+footer { padding: 40px 0; text-align: center; color: var(--text-dim); font-size: 0.75rem; }
