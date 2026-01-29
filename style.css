@@ -58,7 +58,7 @@ header {
 
 /* --- HERO SECTION (FULL SCREEN) --- */
 .hero { 
-    height: 100vh; /* This ensures it takes the full screen first */
+    height: 100vh; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
@@ -110,6 +110,7 @@ section.container, .container {
     transition: 0.3s;
 }
 
+/* Updated Coming Soon Style */
 .btn-coming-soon {
     background: #334155;
     color: var(--text-dim) !important;
