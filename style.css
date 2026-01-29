@@ -15,11 +15,11 @@ html { scroll-behavior: smooth; }
 body {
     background-color: var(--bg-navy);
     color: var(--text-main);
-    font-family: Arial, Helvetica, sans-serif; /* Clean, readable Arial */
+    font-family: Arial, Helvetica, sans-serif; /* Clean Arial font */
     line-height: 1.6;
 }
 
-/* --- NAVIGATION & DROPDOWN --- */
+/* --- NAVIGATION --- */
 header {
     height: 80px;
     display: flex;
@@ -39,7 +39,7 @@ header {
 .nav-links a { color: var(--text-dim); text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
 .nav-links a:hover { color: var(--sky-blue); }
 
-/* Stability Bridge for Dropdown */
+/* DROPDOWN STABILITY */
 .dropdown { position: relative; padding: 15px 0; } 
 .dropdown-menu {
     position: absolute;
@@ -57,7 +57,7 @@ header {
 .dropdown:hover .dropdown-menu { display: block; }
 .status-label { font-size: 0.75rem; color: var(--text-dim); font-style: italic; margin-left: 5px; }
 
-/* --- HERO SECTION (MATCHING IMAGE) --- */
+/* --- HERO SECTION (MATCHING YOUR IMAGE) --- */
 .hero { 
     height: 100vh; 
     display: flex; 
@@ -67,7 +67,6 @@ header {
     flex-direction: column;
     padding: 20px;
 }
-
 .hero h1 { 
     font-size: clamp(2.5rem, 8vw, 4.5rem); 
     font-weight: 900; 
@@ -75,7 +74,6 @@ header {
     margin-bottom: 10px; 
     text-transform: uppercase;
 }
-
 .hero h2 { 
     color: var(--sky-blue); 
     letter-spacing: 5px; 
@@ -84,20 +82,14 @@ header {
     text-transform: uppercase;
     font-weight: normal;
 }
+.hero p { color: var(--text-dim); font-size: 0.95rem; letter-spacing: 0.5px; }
 
-.hero p { 
-    color: var(--text-dim); 
-    font-size: 0.95rem; 
-    letter-spacing: 0.5px;
-}
-
-/* --- CONTAINERS & TITLES --- */
+/* --- CONTAINERS --- */
 section.container, .container { 
     padding: 120px 10% 80px; 
     max-width: 1100px; 
     margin: 0 auto; 
 }
-
 .section-title {
     font-size: 1.6rem;
     color: var(--sky-blue);
@@ -107,7 +99,7 @@ section.container, .container {
     text-transform: uppercase;
 }
 
-/* --- CARDS & GREYED OUT EFFECT --- */
+/* --- CARDS & GREYED OUT --- */
 .file-card {
     background: var(--bg-accent);
     padding: 30px;
@@ -115,13 +107,10 @@ section.container, .container {
     border: 1px solid rgba(56, 189, 248, 0.1);
     margin-bottom: 30px;
 }
-
-/* The Greyed Out Class */
 .card-disabled {
-    opacity: 0.5;
-    background: #1a2233; /* Darker grey-navy */
+    opacity: 0.4;
     filter: grayscale(1);
-    pointer-events: none; /* Prevents clicking */
+    pointer-events: none;
 }
 
 /* --- BUTTONS --- */
@@ -135,7 +124,6 @@ section.container, .container {
     font-weight: bold;
     margin-top: 15px;
 }
-
 .btn-coming-soon {
     background: var(--disabled-grey);
     color: var(--text-dim) !important;
