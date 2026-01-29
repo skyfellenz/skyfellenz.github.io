@@ -9,13 +9,20 @@
 }
 
 /* --- RESET & BASE STYLES --- */
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
 
 body {
     background-color: var(--bg-navy);
     color: var(--text-main);
-    font-family: Arial, Helvetica, sans-serif; /* Clean Arial font */
+    font-family: Arial, Helvetica, sans-serif; /* Clean, readable Arial */
     line-height: 1.6;
 }
 
@@ -34,13 +41,38 @@ header {
     border-bottom: 1px solid rgba(56, 189, 248, 0.1);
 }
 
-.brand-name a { color: var(--sky-blue) !important; font-weight: bold; text-decoration: none; font-size: 1.2rem; }
-.nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
-.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: bold; font-size: 0.9rem; transition: 0.3s; }
-.nav-links a:hover { color: var(--sky-blue); }
+.brand-name a { 
+    color: var(--sky-blue) !important; 
+    font-weight: bold; 
+    text-decoration: none; 
+    font-size: 1.2rem; 
+}
 
-/* DROPDOWN STABILITY */
-.dropdown { position: relative; padding: 15px 0; } 
+.nav-links { 
+    display: flex; 
+    gap: 30px; 
+    list-style: none; 
+    align-items: center; 
+}
+
+.nav-links a { 
+    color: var(--text-dim); 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 0.9rem; 
+    transition: 0.3s; 
+}
+
+.nav-links a:hover { 
+    color: var(--sky-blue); 
+}
+
+/* --- DROPDOWN STABILITY --- */
+.dropdown { 
+    position: relative; 
+    padding: 15px 0; /* Creates an invisible bridge so the menu doesn't close */
+} 
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -54,10 +86,19 @@ header {
     border: 1px solid var(--sky-blue);
     box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
-.dropdown:hover .dropdown-menu { display: block; }
-.status-label { font-size: 0.75rem; color: var(--text-dim); font-style: italic; margin-left: 5px; }
 
-/* --- HERO SECTION (MATCHING YOUR IMAGE) --- */
+.dropdown:hover .dropdown-menu { 
+    display: block; 
+}
+
+.status-label { 
+    font-size: 0.75rem; 
+    color: var(--text-dim); 
+    font-style: italic; 
+    margin-left: 5px; 
+}
+
+/* --- HERO SECTION (MATCHING REFERENCE IMAGE) --- */
 .hero { 
     height: 100vh; 
     display: flex; 
@@ -67,6 +108,7 @@ header {
     flex-direction: column;
     padding: 20px;
 }
+
 .hero h1 { 
     font-size: clamp(2.5rem, 8vw, 4.5rem); 
     font-weight: 900; 
@@ -74,6 +116,7 @@ header {
     margin-bottom: 10px; 
     text-transform: uppercase;
 }
+
 .hero h2 { 
     color: var(--sky-blue); 
     letter-spacing: 5px; 
@@ -82,14 +125,20 @@ header {
     text-transform: uppercase;
     font-weight: normal;
 }
-.hero p { color: var(--text-dim); font-size: 0.95rem; letter-spacing: 0.5px; }
 
-/* --- CONTAINERS --- */
+.hero p { 
+    color: var(--text-dim); 
+    font-size: 0.95rem; 
+    letter-spacing: 0.5px; 
+}
+
+/* --- EXPANDED LAYOUT --- */
 section.container, .container { 
-    padding: 120px 10% 80px; 
-    max-width: 1100px; 
+    padding: 140px 5% 80px; /* Reduced side padding to spread content */
+    max-width: 95%;         /* Expands textboxes horizontally across the page */
     margin: 0 auto; 
 }
+
 .section-title {
     font-size: 1.6rem;
     color: var(--sky-blue);
@@ -99,14 +148,26 @@ section.container, .container {
     text-transform: uppercase;
 }
 
-/* --- CARDS & GREYED OUT --- */
+/* --- CARDS & GREYED OUT EFFECT --- */
 .file-card {
     background: var(--bg-accent);
-    padding: 30px;
+    padding: 40px;          /* Bigger boxes */
     border-radius: 12px;
     border: 1px solid rgba(56, 189, 248, 0.1);
     margin-bottom: 30px;
+    width: 100%;            /* Ensure boxes fill the expanded container */
 }
+
+/* Spaces paragraphs out for readability */
+.file-card p {
+    margin-bottom: 20px;
+}
+
+.file-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* Greyed out style for coming soon pages */
 .card-disabled {
     opacity: 0.4;
     filter: grayscale(1);
@@ -123,10 +184,23 @@ section.container, .container {
     text-decoration: none;
     font-weight: bold;
     margin-top: 15px;
+    transition: 0.3s;
 }
+
+.btn-download:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
 .btn-coming-soon {
     background: var(--disabled-grey);
     color: var(--text-dim) !important;
 }
 
-footer { padding: 60px 0; text-align: center; color: var(--text-dim); font-size: 0.8rem; }
+/* --- FOOTER --- */
+footer { 
+    padding: 60px 0; 
+    text-align: center; 
+    color: var(--text-dim); 
+    font-size: 0.8rem; 
+}
