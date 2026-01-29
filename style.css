@@ -13,12 +13,12 @@ body {
     background-color: var(--bg-navy);
     color: var(--text-main);
     font-family: 'Inter', sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* --- NAVIGATION --- */
+/* --- NAV & DROPDOWN --- */
 header {
-    height: 70px;
+    height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -26,74 +26,75 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 10000; /* Keeps header above everything */
+    z-index: 10000;
     background: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(56, 189, 248, 0.1);
 }
 
-.brand-name a { color: var(--sky-blue) !important; font-weight: 800; text-decoration: none; font-size: 1.2rem; }
-.nav-links { display: flex; gap: 25px; list-style: none; align-items: center; }
-.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.85rem; }
+.brand-name a { color: var(--sky-blue) !important; font-weight: 800; text-decoration: none; font-size: 1.3rem; }
+.nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
+.nav-links a { color: var(--text-dim); text-decoration: none; font-weight: 600; font-size: 0.9rem; }
 .nav-links a:hover { color: var(--sky-blue); }
 
-/* --- FIXED DROPDOWN (SOLID BACKGROUND) --- */
-.dropdown { position: relative; }
 .dropdown-menu {
     position: absolute;
     top: 100%;
     right: 0;
-    background-color: #1e293b; /* Solid color to block title text */
+    background-color: #1e293b;
     display: none;
     list-style: none;
-    padding: 12px;
+    padding: 15px;
     min-width: 200px;
-    border-radius: 6px;
+    border-radius: 8px;
     border: 1px solid var(--sky-blue);
-    z-index: 20000; /* Higher than hero text */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    margin-top: 5px;
+    z-index: 20000;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 .dropdown:hover .dropdown-menu { display: block; }
-.dropdown-menu li a { display: block; padding: 8px 0; }
 
 /* --- HERO --- */
-.hero { 
-    height: 85vh; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center;
-    position: relative;
-    z-index: 1; /* Lower layer than dropdown */
-}
-.main-title { font-size: clamp(2.5rem, 8vw, 5.5rem); font-weight: 900; color: #fff; margin-bottom: 5px; }
-.sub-title { font-size: 1.2rem; color: var(--sky-blue); letter-spacing: 8px; text-transform: uppercase; margin-bottom: 20px; }
-.tagline { color: var(--text-dim); font-size: 1rem; }
+.hero { height: 80vh; display: flex; justify-content: center; align-items: center; text-align: center; }
 
-/* --- ULTRA TIGHT LAYOUT --- */
-section.container { 
-    padding: 8px 10%; 
-    margin-bottom: 5px; 
+/* --- THE SPACING FIX --- */
+.container { 
+    padding: 60px 10% 20px; /* Added 60px to the top so it's not too far up */
     max-width: 1000px; 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto; 
 }
 
 .section-title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     color: var(--sky-blue);
-    margin-bottom: 8px;
-    border-left: 3px solid var(--sky-blue);
-    padding-left: 12px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--sky-blue);
+    padding-left: 15px;
     text-transform: uppercase;
 }
 
 .file-card {
     background: var(--bg-accent);
-    padding: 20px;
+    padding: 30px;
     border-radius: 12px;
-    border: 1px solid rgba(56, 189, 248, 0.05);
+    border: 1px solid rgba(56, 189, 248, 0.1);
+    margin-bottom: 20px; /* Adds space between the About, Resume, and Contact boxes */
 }
 
-.file-card p
+.file-card p { margin-bottom: 20px; }
+.file-card p:last-child { margin-bottom: 0; }
+
+/* --- THE BUTTON FIX --- */
+.btn-download {
+    display: inline-block;
+    background: var(--sky-blue);
+    color: #0f172a !important;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 800;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+.btn-download:hover { background: #fff; transform: translateY(-2px); }
+
+footer { padding: 50px 0; text-align: center; color: var(--text-dim); font-size: 0.8rem; }
